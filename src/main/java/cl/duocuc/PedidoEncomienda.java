@@ -1,15 +1,26 @@
 package cl.duocuc;
 
-public class PedidoEncomienda extends Pedido {
+public class PedidoEncomienda extends Pedido
+    implements Despachable, Cancelable {
 
-    public PedidoEncomienda(String idPedido, String direccionEntrega, double distanciaKm) {
-        super(idPedido, direccionEntrega, distanciaKm);
-    }
-
-    @Override
-    public double calcularTiempoEntrega() {
-        // 20 min base + 1.5 min por km, ajustar a entero (se redondea al entero más cercano)
-        double tiempo = 20.0 + 1.5 * distanciaKm;
-        return (double) Math.round(tiempo);
+        public PedidoEncomienda(String idPedido, String cliente) {
+            super(idPedido, cliente);
+        }
+        @Override
+        public void asignarRepartidor(String nombreRepartidor){
+            this.repartidor = nombreRepartidor;
+        }
+        @Override
+        public double calcularTiempoEntrega() {
+            return 60;
+        }
+        @Override
+        public void despachar() {
+            System.out.println("Despachando encomienda ID: " + idPedido);
+        }
+        @Override
+        public void cancelar() {
+            super.cancelar();
+            System.out.println("Cancelando encomienda");
     }
 }

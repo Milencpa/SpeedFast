@@ -1,18 +1,26 @@
 package cl.duocuc;
 
-public class PedidoExpress extends Pedido {
+public class PedidoExpress extends Pedido
+    implements Despachable, Cancelable {
 
-    public PedidoExpress(String idPedido, String direccionEntrega, double distanciaKm) {
-        super(idPedido, direccionEntrega, distanciaKm);
-    }
-
-    @Override
-    public double calcularTiempoEntrega() {
-        // 10 min base; si distancia > 5 km se agregan 5 min extra
-        double tiempo = 10.0;
-        if (distanciaKm > 5.0) {
-            tiempo += 5.0;
+        public PedidoExpress(String idPedido, String cliente) {
+            super(idPedido, cliente);
         }
-        return tiempo;
+        @Override
+        public void asignarRepartidor () {
+            this.repartidor = "Repartidor Express";
+        }
+        @Override
+        public double calcularTiempoEntrega () {
+            return 15.0; // Tiempo fijo de 15 minutos
+        }
+        @Override
+        public void despachar () {
+            System.out.println("Despachando pedido express ID: " + idPedido);
+        }
+        @Override
+        public void cancelar () {
+            super.cancelar();
+            System.out.println("Cancelando pedido express");
     }
 }
