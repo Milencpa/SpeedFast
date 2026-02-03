@@ -1,39 +1,37 @@
 package cl.duocuc;
 
+
 public abstract class Pedido {
     protected String idPedido;
-    protected String cliente;
-    protected String repartidor;
-    protected boolean cancelado;
+    protected String direccionEntrega;
+    protected double distanciaKm;
 
-    public Pedido(String idPedido, String cliente) {
+    public Pedido(String idPedido, String direccionEntrega, double distanciaKm) {
         this.idPedido = idPedido;
-        this.cliente = cliente;
-        this.repartidor = "No asignado";
-        this.cancelado = false;
+        this.direccionEntrega = direccionEntrega;
+        this.distanciaKm = distanciaKm;
     }
-
-    // Método para cancelar el pedido
-    public void cancelar() {
-        this.cancelado = true;
-        System.out.println("El pedido ID: " + idPedido + " ha sido cancelado.");
-    }
-
-    //Polimorfismo: sobrecarga de métodos
-    public void asignarRepartidor(String repartidor) {
-        this.repartidor = repartidor;
-    }
-    public void asignarRepartidor() {
-        this.repartidor = "Repartidor por defecto";
-    }
+    public abstract double calcularTiempoEntrega();
 
     public void mostrarResumen() {
-        System.out.println("\nID Pedido: " + idPedido);
-        System.out.println("Cliente: " + cliente);
-        System.out.println("Repartidor: " + repartidor);
-        System.out.println("Estado: " + (cancelado ? "Cancelado" : "Activo"));
+        System.out.println("ID Pedido: " + idPedido);
+        System.out.println("Dirección de Entrega: " + direccionEntrega);
+        System.out.println("Distancia (km): " + distanciaKm);
+        System.out.println("Tiempo Entrega: " + calcularTiempoEntrega());
+    }
+    public void despachar() {
+        System.out.println("Pedido " + idPedido + " despachado.");
     }
 
-    // Método abstracto para calcular el tiempo de entrega
-    public abstract double calcularTiempoEntrega();
+    public void cancelar() {
+        System.out.println("Pedido " + idPedido + " cancelado.");
+    }
+
+    public void rastrear () {
+        System.out.println("Rastreando pedido " + idPedido + "...");
+    }
+
+    public String getIdPedido() {
+        return idPedido;
+    }
 }
