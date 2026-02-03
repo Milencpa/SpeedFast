@@ -1,5 +1,5 @@
-
-# 🧠 Actividad Sumativa 1 Semana 3 – Desarrollo Orientado a Objetos II
+ 
+# 🧠 Actividad Formativa 3 Semana 4 – Desarrollo Orientado a Objetos II
 
 
 ## 👤 Autor del proyecto
@@ -12,7 +12,7 @@
 
 ## 📘 Descripción general del sistema
 
-SpeedFast es un sistema desarrollado en Java que modela distintos tipos de pedidos de reparto (comida, encomiendas y express) aplicando principios de Programación Orientada a Objetos. Utiliza herencia, polimorfismo y clases abstractas para calcular de forma diferenciada el tiempo estimado de entrega según el tipo de pedido.
+SpeedFast es un sistema desarrollado en Java que modela distintos tipos de pedidos de reparto (comida, encomiendas y express) aplicando principios de Programación Orientada a Objetos. Utiliza herencia, polimorfismo y clases abstractas.
 
 
 ## ⚙️ Instrucciones para clonar y ejecutar el proyecto
@@ -24,4 +24,4 @@ SpeedFast es un sistema desarrollado en Java que modela distintos tipos de pedid
 4. Sigue las instrucciones en consola o en la interfaz gráfica (si corresponde).
 
 
-**Repositorio GitHub:** [https://github.com/Milencpa/SpeedFast] **Fecha de entrega:** [26/01/2026]
+**Repositorio GitHub:** [https://github.com/Milencpa/SpeedFast] **Fecha de entrega:** [02/02/2026]
