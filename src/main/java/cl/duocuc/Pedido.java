@@ -1,37 +1,51 @@
 package cl.duocuc;
 
 
-public abstract class Pedido {
-    protected String idPedido;
-    protected String direccionEntrega;
-    protected double distanciaKm;
+public class Pedido {
+    private int id;
+    private String direccionEntrega;
+    private EstadoPedido estado;
 
-    public Pedido(String idPedido, String direccionEntrega, double distanciaKm) {
-        this.idPedido = idPedido;
+    // Constructor
+    public Pedido(int id, String direccionEntrega) {
+        this.id = id;
         this.direccionEntrega = direccionEntrega;
-        this.distanciaKm = distanciaKm;
-    }
-    public abstract double calcularTiempoEntrega();
-
-    public void mostrarResumen() {
-        System.out.println("ID Pedido: " + idPedido);
-        System.out.println("Dirección de Entrega: " + direccionEntrega);
-        System.out.println("Distancia (km): " + distanciaKm);
-        System.out.println("Tiempo Entrega: " + calcularTiempoEntrega());
-    }
-    public void despachar() {
-        System.out.println("Pedido " + idPedido + " despachado.");
+        this.estado = EstadoPedido.PENDIENTE;
     }
 
-    public void cancelar() {
-        System.out.println("Pedido " + idPedido + " cancelado.");
+    // Getters
+    public int getId() {
+        return id;
     }
 
-    public void rastrear () {
-        System.out.println("Rastreando pedido " + idPedido + "...");
+    public String getDireccionEntrega() {
+        return direccionEntrega;
     }
 
-    public String getIdPedido() {
-        return idPedido;
+    public EstadoPedido getEstado() {
+        return estado;
+    }
+
+    // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDireccionEntrega(String direccionEntrega) {
+        this.direccionEntrega = direccionEntrega;
+    }
+
+    public void setEstado(EstadoPedido nuevoEstado) {
+        this.estado = nuevoEstado;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", direccionEntrega='" + direccionEntrega + '\'' +
+                ", estado=" + estado +
+                '}';
     }
 }
