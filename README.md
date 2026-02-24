@@ -1,5 +1,5 @@
  
-# 🧠 Actividad Formativa 3 Semana 4 – Desarrollo Orientado a Objetos II
+# 🧠 Actividad Sumativa 2 Semana 5 – Desarrollo Orientado a Objetos II
 
 
 ## 👤 Autor del proyecto
@@ -24,4 +24,4 @@ SpeedFast es un sistema desarrollado en Java que modela distintos tipos de pedid
 4. Sigue las instrucciones en consola o en la interfaz gráfica (si corresponde).
 
 
-**Repositorio GitHub:** [https://github.com/Milencpa/SpeedFast] **Fecha de entrega:** [02/02/2026]
+**Repositorio GitHub:** [https://github.com/Milencpa/SpeedFast] **Fecha de entrega:** [09/02/2026]
